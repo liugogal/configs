@@ -20,6 +20,6 @@ spring:
           destination: mqTestDefault
         output:
           destination: mqTestDefault
-          contentType: text/plain
+          #contentType: text/plain
 env:
   test18889999
