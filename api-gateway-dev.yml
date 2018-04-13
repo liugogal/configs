@@ -1,4 +1,6 @@
+#路由配置
 zuul:
+  sensitive-headers:
   routes:
     myProduct:
       path: /myProduct/**
@@ -7,6 +9,7 @@ zuul:
     connect-timeout-millis: 10000
     socket-timeout-millis: 60000
 
+#超时处理
 hystrix:
   command:
     default:
@@ -17,3 +20,9 @@ hystrix:
             ribbon:
               ReadTimeout:1000
               ConnectTimeout:1000
+#暴露管理接口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
