@@ -5,9 +5,6 @@ zuul:
     myProduct:
       path: /myProduct/**
       serviceId: product
-  host:
-    connect-timeout-millis: 10000
-    socket-timeout-millis: 60000
 
 #超时处理
 hystrix:
@@ -16,10 +13,8 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 60000
-            ribbon:
-              ReadTimeout:1000
-              ConnectTimeout:1000
+            timeoutInMilliseconds: 30000
+            
 #暴露管理接口
 management:
   endpoints:
